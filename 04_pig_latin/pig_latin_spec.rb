@@ -67,6 +67,18 @@ describe "#translate" do
 
   # Test-driving bonus:
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
+  it "Retains capitalization" do
+    s = translate("The Quick Brown Fox")
+    expect(s).to eq("Ethay Ickquay Ownbray Oxfay")
+  end
   # * retain the punctuation from the original phrase
+  it "Retains punctuation" do
+    s = translate("The quick brown fox jumps. But over what? The lazy dog!")
+    expect(s).to eq("Ethay ickquay ownbray oxfay umpsjay. Utbay overay atwhay? Ethay azylay ogday!")
+  end
 
+  it "Handles y" do
+    s = translate("My yellow coccyx.")
+    expect(s).to eq("Ymay ellowyay occyxcay.")
+  end
 end
